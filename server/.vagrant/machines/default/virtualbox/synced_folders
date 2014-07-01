@@ -1,0 +1,1 @@
+{"virtualbox":{"/var/www":{"guestpath":"/var/www","hostpath":"/Library/WebServer/www/recipes-backend.griller/www"},"/vagrant":{"guestpath":"/vagrant","hostpath":"/Library/WebServer/www/recipes-backend.griller/server"},"v-csc-1":{"id":"v-csc-1","guestpath":"/tmp/vagrant-chef-3/chef-solo-1/cookbooks","hostpath":"/Library/WebServer/www/recipes-backend.griller/server/cookbooks"}}}
