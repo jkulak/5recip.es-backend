@@ -1,4 +1,4 @@
 # node.default = default
 # node.default['recipesapp']['user'] = 'myface'
-default['recipesapp']['user'] = 'www'
-default['recipesapp']['group'] = 'myface'
+default['tests']['group'] = 'myface'
+default['tests']['user'] = 'www'

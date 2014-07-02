@@ -14,10 +14,10 @@ end
 
 
 # Create group and users
-# group node['recipesapp']['group']
+group node['tests']['group']
 
-user node['recipesapp']['user'] do
-  group node['recipesapp']['group']
+user node['tests']['user'] do
+  group node['tests']['group']
   system true
   shell '/bin/bash'
 end
