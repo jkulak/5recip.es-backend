@@ -19,3 +19,6 @@
 
 # install php5 with apache lib
 # apt-get install -y php5=5.5.9+dfsg-1ubuntu4
+
+# Install chef
+# gem install --no-rdoc --no-ri chef

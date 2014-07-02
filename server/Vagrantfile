@@ -10,6 +10,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
   # Every Vagrant virtual environment requires a box to build off of.
+  # config.vm.box = "ubuntu/precise64"
+  # config.vm.box = "chef/ubuntu-13.10"
   config.vm.box = "ubuntu/trusty64"
 
   config.vm.provision :shell, :path => "Bootstrap.sh"
@@ -36,8 +38,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.add_recipe "recipesapp"
 
-    chef.add_recipe "mysql::server"
-    chef.add_recipe "mysql::client"
+    # working commented out for faster apache2 testing
+    # chef.add_recipe "mysql::server"
+    # chef.add_recipe "mysql::client"
+
+    chef.add_recipe "wac-apache2"
     
     # chef.add_recipe "mysql::default"
 
@@ -50,9 +55,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.json = {
       mysql: {
-        server_root_password: 'rootpass',
-        server_debian_password: 'debpass',
-        server_repl_password: 'replpass'
+        version: '5.5',
+        server_root_password: 'rootpass'
       }
     }
   end
