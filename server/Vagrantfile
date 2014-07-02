@@ -16,11 +16,6 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision :shell, :path => "Bootstrap.sh"
 
-  # Enabling the Berkshelf plugin. To enable this globally, add this configuration
-  # option to your ~/.vagrant.d/Vagrantfile file
-  # config.berkshelf.enabled = true
-
-
   # Share an additional folder to the guest VM. The first argument is
   # the path on the host to the actual folder. The second argument is
   # the path on the guest to mount the folder. And the optional third
@@ -30,26 +25,11 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "chef_solo" do |chef|
 
-    # chef.cookbooks_path = "cookbooks"
-     
-    # chef.run_list = [
-    #     "recipe[mysql::default]"
-    # ]
-
-    chef.add_recipe "recipesapp"
-
-    # working commented out for faster apache2 testing
-    # chef.add_recipe "mysql::server"
-    # chef.add_recipe "mysql::client"
-
+    chef.add_recipe "mysql::server"
+    chef.add_recipe "mysql::client"
     chef.add_recipe "wac-apache2"
-    
-    # chef.add_recipe "mysql::default"
-
-    # chef.add_recipe "mysql::client"
-
     chef.add_recipe "nginx"
-    chef.add_recipe "tests"
+    chef.add_recipe "wac-tests"
     
     # You may also specify custom JSON attributes:
 
