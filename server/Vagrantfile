@@ -31,9 +31,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
     chef.add_recipe "mysql::server"
     chef.add_recipe "mysql::client"
-    chef.add_recipe "nginx"
     chef.add_recipe "wac-tests"
     chef.add_recipe "wac-apache2"
+    chef.add_recipe "nginx"
     
     # You may also specify custom JSON attributes:
 
