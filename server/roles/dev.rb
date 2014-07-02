@@ -19,13 +19,16 @@ default_attributes(
 run_list(
 
     # "recipe[apt]",
+    "recipe[apt]",
     "recipe[mysql::server]",
     "recipe[mysql::client]",
     "recipe[wac-tests]",
     "recipe[wac-apache2]",
     "recipe[apache2::mod_headers]",
     "recipe[apache2::mod_php5]",
+    "recipe[wac-php]",
     "recipe[database::mysql]",
     "recipe[wac-database]",
     "recipe[nginx]",
+    "recipe[wac-drupal]",
 )

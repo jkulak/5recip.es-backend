@@ -37,7 +37,8 @@ mysql_database_user 'www' do
   password      'www'
   database_name 'my_db'
   host          '%'
-  privileges    [:select,:update,:insert]
+  # privileges    [:create,:select,:update,:insert]
+  privileges    [:delete,:drop,:create,:select,:update,:insert]
   action        :grant
 end
 

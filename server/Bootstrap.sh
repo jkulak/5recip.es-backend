@@ -1,8 +1,8 @@
 #!/usr/bin/env bash
 
-apt-get update
+# apt-get update
 
-apt-get install ruby-dev
+# apt-get install ruby-dev
 
 # apt-get install -y apache2
 # rm -rf /var/www
