@@ -8,8 +8,7 @@
 #
 
 include_recipe 'apache2'
-include_recipe 'apache2::mod_headers'
-include_recipe 'apache2::mod_php5'
+
 
 template 'apache2-conf-security' do
   path     "#{node['apache']['dir']}/conf.d/security.conf"
@@ -20,3 +19,12 @@ template 'apache2-conf-security' do
   backup   false
   notifies :reload, 'service[apache2]'
 end
+
+
+
+# web_app "example" do
+#   server_name "www.example.vm"
+#   server_aliases ["example.vm"]
+#   allow_override "all"
+#   docroot "/var/www/html/"
+# end
