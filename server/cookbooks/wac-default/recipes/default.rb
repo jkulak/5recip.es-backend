@@ -21,3 +21,9 @@ user node['tests']['user'] do
   system true
   shell '/bin/bash'
 end
+
+
+# Needed to install mysql
+apt_package "ruby-dev" do
+  action :install
+end

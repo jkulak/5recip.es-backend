@@ -15,3 +15,17 @@
 #   mode 00777
 #   action :create
 # end
+
+# Bootstrapping based on Drupal requirements
+
+apt_package "php5-gd" do
+  action :install
+end
+
+apt_package "php5-mysql" do
+  action :install
+end
+
+apt_package "php5-common" do
+  action :install
+end
