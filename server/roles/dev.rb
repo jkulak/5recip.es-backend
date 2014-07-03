@@ -10,7 +10,7 @@ override_attributes(
 )
 
 default_attributes(
-    "build_essential" => {
+    "build-essential" => {
         "compile_time" => true
     }
 )
@@ -19,14 +19,9 @@ default_attributes(
 run_list(
 
     "recipe[apt]",
-    "recipe[mysql::server]",
-    "recipe[mysql::client]",
     "recipe[wac-default]",
-    "recipe[wac-apache2]",
-    "recipe[apache2::mod_headers]",
-    "recipe[apache2::mod_php5]",
-    "recipe[database::mysql]",
-    "recipe[wac-database]",
+    "recipe[app-recipes-backend::database_server]",
+    "recipe[app-recipes-backend::app_server]",
     "recipe[nginx]",
     "recipe[wac-drupal]",
 )

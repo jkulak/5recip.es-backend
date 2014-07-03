@@ -1,12 +1,13 @@
 #
-# Cookbook Name:: wac-database
-# Recipe:: default
+# Cookbook Name:: app-recipes-backend
+# Recipe:: database_server
 #
-# Copyright 2014, YOUR_COMPANY_NAME
+# Copyright 2014, WebAsCrazy.net
 #
 # All rights reserved - Do Not Redistribute
 
 include_recipe "database::mysql"
+include_recipe "mysql::server"
 
 mysql_connection_info = {
   :host     => 'localhost',
