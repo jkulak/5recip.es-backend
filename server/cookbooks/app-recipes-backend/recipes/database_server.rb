@@ -5,6 +5,12 @@
 # Copyright 2014, WebAsCrazy.net
 #
 # All rights reserved - Do Not Redistribute
+# 
+
+# Needed to install mysql
+apt_package "ruby-dev" do
+  action :install
+end
 
 include_recipe "database::mysql"
 include_recipe "mysql::server"

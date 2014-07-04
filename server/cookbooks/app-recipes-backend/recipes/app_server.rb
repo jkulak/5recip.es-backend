@@ -19,3 +19,17 @@ template 'apache2-conf-security' do
   backup   false
   notifies :reload, 'service[apache2]'
 end
+
+# Move custom motd
+cookbook_file "/etc/update-motd.d/01-custom" do 
+    mode 00755
+end
+
+# Create group and users
+group node['tests']['group']
+
+user node['tests']['user'] do
+  group node['tests']['group']
+  system true
+  shell '/bin/bash'
+end
