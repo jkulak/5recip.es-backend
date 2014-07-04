@@ -7,7 +7,9 @@
 #
 <Directory />
 	AllowOverride All
-	Require all granted
+#	Require all granted
+    Order Allow,Deny
+    Allow from all
 </Directory>
 
 # Changing the following options will not really affect the security of the

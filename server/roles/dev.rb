@@ -10,6 +10,5 @@ default_attributes(
 # Run list function we mentioned earlier
 run_list(
 
-    "recipe[apt]",
-    "recipe[app-recipes-backend]",
+    "recipe[app-recipes-backend]"
 )
