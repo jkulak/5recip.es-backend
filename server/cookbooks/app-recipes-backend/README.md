@@ -32,7 +32,7 @@ No attributes.
 
 Usage
 -----
-#### recipe-backend::default
+#### app-recipes-backend::default
 
 Just include `app-recipes-backend` in your node's `run_list`:
 
