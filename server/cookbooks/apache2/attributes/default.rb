@@ -31,7 +31,7 @@ when 'redhat', 'centos', 'scientific', 'fedora', 'suse', 'amazon', 'oracle'
   default['apache']['user']        = 'apache'
   default['apache']['group']       = 'apache'
   default['apache']['binary']      = '/usr/sbin/httpd'
-  default['apache']['docroot_dir'] = '/var/www'
+  default['apache']['docroot_dir'] = '/var/www/html'
   default['apache']['cgibin_dir']  = '/var/www/cgi-bin'
   default['apache']['icondir']     = '/var/www/icons'
   default['apache']['cache_dir']   = '/var/cache/httpd'
@@ -177,7 +177,7 @@ default['apache']['proxy']['allow_from'] = 'none'
 # Default modules to enable via include_recipe
 
 default['apache']['default_modules'] = %w[
-  status alias auth_basic authn_file authz_groupfile authz_host authz_user autoindex
+  status alias auth_basic authn_file authz_default authz_groupfile authz_host authz_user autoindex
   dir env mime negotiation setenvif
 ]
 

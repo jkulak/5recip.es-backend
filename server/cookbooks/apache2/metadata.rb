@@ -14,7 +14,7 @@ recipe            'apache2::mod_auth_digest', 'Apache module "auth_digest"'
 recipe            'apache2::mod_auth_openid', 'Apache module "authopenid"'
 recipe            'apache2::mod_authn_file', 'Apache module "authn_file"'
 recipe            'apache2::mod_authnz_ldap', 'Apache module "authnz_ldap"'
-
+recipe            'apache2::mod_authz_default', 'Apache module "authz_default"'
 recipe            'apache2::mod_authz_groupfile', 'Apache module "authz_groupfile"'
 recipe            'apache2::mod_authz_host', 'Apache module "authz_host"'
 recipe            'apache2::mod_authz_user', 'Apache module "authz_user"'
@@ -254,7 +254,7 @@ attribute 'apache/default_modules',
           :display_name => 'Apache Default Modules',
           :description  => 'Default modules to enable via recipes',
           :type         => 'array',
-          :default      => %w[status alias auth_basic authn_file authz_groupfile authz_host authz_user autoindex dir env mime negotiation setenvif],
+          :default      => %w[status alias auth_basic authn_file authz_default authz_groupfile authz_host authz_user autoindex dir env mime negotiation setenvif],
           :recipes      => ['apache2::default']
 
 attribute 'apache/mod_ssl/cipher_suite',
