@@ -1,52 +1,46 @@
-recipe-backend Cookbook
+app-recipes-backend Cookbook
 =======================
-TODO: Enter the cookbook description here.
 
-e.g.
-This cookbook makes your favorite breakfast sandwich.
+This cookbook sets up Apache 2.4, nginx, mysql and does simple configuration for fast web development and prototyping.
 
 Requirements
 ------------
-TODO: List your cookbook requirements. Be sure to include any requirements this cookbook has on platforms, libraries, other cookbooks, packages, operating systems, etc.
 
-e.g.
 #### packages
-- `toaster` - recipe-backend needs toaster to brown your bagel.
+- `apache2`
+root@vagrant-ubuntu-trusty-64:/home/vagrant# tail -f /var/log/apache2/error.log 
+[Sat Jul 05 09:16:20.371831 2014] [mpm_event:notice] [pid 13284:tid 139776368904064] AH00489: Apache/2.4.7 (Ubuntu) configured -- resuming normal operations
+[Sat Jul 05 09:16:20.371934 2014] [core:notice] [pid 13284:tid 139776368904064] AH00094: Command line: '/usr/sbin/apache2'
+[Sat Jul 05 09:17:23.713893 2014] [mpm_event:notice] [pid 13284:tid 139776368904064] AH00493: SIGUSR1 received.  Doing graceful restart
+AH00534: apache2: Configuration error: The MPM cannot be changed during restart.
+
+Due to above, /cookbooks/apache2/templates/default/apache2.conf.erb is modified, lines 12 and 13, to support Mutex (Apache 2.4)
+
+- `apt`
+- `build-essential`
+- `database`
+- `iptables`
+- `logrotate`
+- `mysql`
+- `mysql-chef_gem`
+- `nginx`
+- `pacman`
 
 Attributes
 ----------
-TODO: List your cookbook attributes here.
-
-e.g.
-#### recipe-backend::default
-<table>
-  <tr>
-    <th>Key</th>
-    <th>Type</th>
-    <th>Description</th>
-    <th>Default</th>
-  </tr>
-  <tr>
-    <td><tt>['recipe-backend']['bacon']</tt></td>
-    <td>Boolean</td>
-    <td>whether to include bacon</td>
-    <td><tt>true</tt></td>
-  </tr>
-</table>
+No attributes.
 
 Usage
 -----
 #### recipe-backend::default
-TODO: Write usage instructions for each cookbook.
 
-e.g.
-Just include `recipe-backend` in your node's `run_list`:
+Just include `app-recipes-backend` in your node's `run_list`:
 
 ```json
 {
   "name":"my_node",
   "run_list": [
-    "recipe[recipe-backend]"
+    "recipe[app-recipes-backend]"
   ]
 }
 ```
@@ -65,4 +59,4 @@ e.g.
 
 License and Authors
 -------------------
-Authors: TODO: List authors
+Authors: Jakub Kułak <jakub.kulak@gmail.com>
