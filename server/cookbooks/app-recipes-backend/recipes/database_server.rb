@@ -21,12 +21,32 @@ mysql_connection_info = {
   :password => node['mysql']['server_root_password']
 }
 
-# Create databases
+# Create databases and import data from a file
 
-mysql_database 'my_db' do
+# Create a mysql database
+mysql_database '5recipes_backend' do
   connection mysql_connection_info
   action :create
-end 
+end
+
+# mysql_database '5recipes_backend' do
+#   connection mysql_connection_info
+#   sql { ::File.open('/vagrant/db/db_dump_20140707-011827-with-random-data.sql').read }
+#   action :query
+# end
+
+# import an sql dump from your app_root/data/dump.sql to the my_database database
+execute 'import' do
+  command "mysql -u root -p\"#{node['mysql']['server_root_password']}\" 5recipes_backend < /vagrant/db/db_dump_20140707-011827-with-random-data.sql"
+  action :run
+end
+
+
+#or import from a dump file
+# mysql_database '5recipes_backend' do
+#   connection mysql_connection_info
+#   sql "source /vagrant/db/db_dump_20140707-011827-with-random-data.sql;"
+# end
 
 # Create users 
 
@@ -41,10 +61,10 @@ end
 mysql_database_user 'www' do
   connection    mysql_connection_info
   password      'www'
-  database_name 'my_db'
+  database_name '5recipes_backend'
   host          '%'
   # privileges    [:create,:select,:update,:insert]
-  privileges    [:delete,:drop,:create,:select,:update,:insert]
+  privileges    [:select, :insert, :update, :delete, :create, :drop, :index, :alter]
   action        :grant
 end
 
