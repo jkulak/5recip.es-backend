@@ -1,0 +1,43 @@
+DEPENDENCIES
+  apache2
+  app-recipes-backend
+    path: site-cookbooks/app-recipes-backend
+  database
+
+GRAPH
+  apache2 (1.10.4)
+    iptables (>= 0.0.0)
+    logrotate (>= 0.0.0)
+    pacman (>= 0.0.0)
+  app-recipes-backend (0.1.0)
+    apache2 (>= 0.0.0)
+    apt (>= 0.0.0)
+    database (>= 0.0.0)
+  apt (2.4.0)
+  aws (2.3.0)
+  build-essential (2.0.4)
+  chef-sugar (2.0.0)
+  database (2.2.0)
+    aws (>= 0.0.0)
+    mysql (>= 5.0.0)
+    mysql-chef_gem (>= 0.0.0)
+    postgresql (>= 1.0.0)
+    xfs (>= 0.0.0)
+  iptables (0.13.2)
+  logrotate (1.6.0)
+  mysql (5.3.6)
+    yum-mysql-community (>= 0.0.0)
+  mysql-chef_gem (0.0.2)
+    build-essential (>= 0.0.0)
+    mysql (>= 0.0.0)
+  openssl (2.0.0)
+    chef-sugar (>= 0.0.0)
+  pacman (1.1.1)
+  postgresql (3.4.1)
+    apt (>= 1.9.0)
+    build-essential (>= 0.0.0)
+    openssl (>= 0.0.0)
+  xfs (1.1.0)
+  yum (3.2.2)
+  yum-mysql-community (0.1.8)
+    yum (>= 3.0.0)

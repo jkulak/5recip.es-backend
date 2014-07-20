@@ -13,6 +13,8 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # fixing: https://github.com/mitchellh/vagrant/issues/1673
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
+  config.berkshelf.enabled = true
+
   # Every Vagrant virtual environment requires a box to build off of.
   # config.vm.box = "verge/precise32-chef"
   # config.vm.box = "ubuntu/precise64"
@@ -36,11 +38,9 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 
   config.vm.provision "chef_solo" do |chef|
 
-    # chef.roles_path = "./roles" 
-    # chef.add_role "dev"
- 
-    # chef.cookbooks_path = ["../chef/site-cookbooks", "../chef/cookbooks"]
-    # chef.roles_path = "../my-recipes/roles"
+    chef.roles_path = "./roles" 
+    chef.add_role "dev"
+        
     # chef.data_bags_path = "../my-recipes/data_bags"
     # chef.add_recipe "mysql"
     # chef.add_role "web"

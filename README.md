@@ -1,7 +1,5 @@
-recipes-backend
+Recipes data base with a RESTful API 
 ===============
-
-# Recipes data base with a RESTful API 
 
 ## API
 
@@ -35,5 +33,6 @@ In 'server' directory do:
 
 - [x] Create cool app
 - [x] Move all environment elements to recipes
-- [x] Database import from file
+- [x] Database import from sql dump
+- [ ] Move community recipes to Berkshelf
 - [ ] Create vhosts using providers form apache2 recipe

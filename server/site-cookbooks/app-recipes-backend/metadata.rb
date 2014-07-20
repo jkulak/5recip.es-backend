@@ -1,4 +1,4 @@
-name             'app-recipe-backend'
+name             'app-recipes-backend'
 maintainer       'WebAsCrazy.net'
 maintainer_email 'jakub.kulak@gmail.com'
 license          'All rights reserved'
