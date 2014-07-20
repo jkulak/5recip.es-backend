@@ -6,7 +6,6 @@
 #
 # All rights reserved - Do Not Redistribute
 
-
 # apt_package "php5-gd" do
 #   action :install
 # end
@@ -19,7 +18,7 @@
 #   action :install
 # end
 
-# Needed by Drupal - maybe should be moved to Drupal
+# Needed by Drupal
 package 'php5-gd'
 package 'php5-mysql'
 package 'php5-common'

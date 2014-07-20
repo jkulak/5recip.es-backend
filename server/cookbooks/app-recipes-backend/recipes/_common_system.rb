@@ -20,3 +20,7 @@
 
 
 include_recipe 'apt'
+
+package "git" do
+  action :install
+end
