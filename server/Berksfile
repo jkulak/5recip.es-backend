@@ -1,0 +1,10 @@
+source "https://supermarket.getchef.com"
+
+# metadata
+
+cookbook "apache2"
+cookbook "database"
+# cookbook "nginx"
+# cookbook "nodejs"
+
+cookbook "app-recipes-backend", "> 0.0", path: "./site-cookbooks/app-recipes-backend"
