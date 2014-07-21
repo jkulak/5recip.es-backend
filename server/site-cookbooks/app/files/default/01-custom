@@ -1,0 +1,9 @@
+#!/bin/sh
+
+cat << 'EOF'
+
+Yo yo
+
+jakub.kulak@gmail.com
+
+EOF

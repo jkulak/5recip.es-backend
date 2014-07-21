@@ -1,3 +1,0 @@
-[submodule "server/cookbooks/php"]
-	path = server/cookbooks/php
-	url = https://github.com/opscode-cookbooks/php.git
