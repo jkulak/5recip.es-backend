@@ -28,5 +28,5 @@ web_app "5recip.es" do
   server_aliases ["www.5recip.es.vmx"]
   allow_override "All"
   docroot "/var/www/5recip.es/www"
-  server_port "44444"
+  server_port "7777"
 end
