@@ -1,4 +1,4 @@
-Recipes data base with a RESTful API 
+Recipes data base with a RESTful API
 ===============
 
 ## API
@@ -34,5 +34,6 @@ In 'server' directory do:
 - [x] Create cool app
 - [x] Move all environment elements to recipes
 - [x] Database import from sql dump
-- [ ] Move community recipes to Berkshelf
-- [ ] Create vhosts using providers form apache2 recipe
+- [x] Install elastic search (http://192.168.99.99:9200/_plugin/marvel/sense/index.html)
+- [x] Move community recipes to Berkshelf
+- [x] Create vhosts using providers form apache2 recipe

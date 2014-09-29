@@ -10,15 +10,17 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
   # fixing: https://github.com/mitchellh/vagrant/issues/1673
   config.ssh.shell = "bash -c 'BASH_ENV=/etc/profile exec bash'"
 
+  config.vm.provision "shell", path: "provision.sh"
+
   config.berkshelf.enabled = true
 
   # Every Vagrant virtual environment requires a box to build off of.
   config.vm.box = "ubuntu/trusty64"
 
-  config.vm.provider "virtualbox" do |vb|
-
-    vb.name = VIRTUAL_MACHINE_NAME
-  end
+  # config.vm.provider "virtualbox" do |vb|
+  #
+  #   vb.name = VIRTUAL_MACHINE_NAME
+  # end
 
   # 127.0.0.1:9999 = 192.168.99.99
   # 127.0.0.1:8888 = 192.168.99.99:7777
